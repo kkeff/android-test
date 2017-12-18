@@ -28,7 +28,7 @@ public class Actor {
         return movies;
     }
 
-    public Actor(String productId, String name, String description, List<String> movies) {
+    public Actor(String id, String name, String description, List<String> movies) {
         this.id = id;
         this.name = name;
         this.description = description;

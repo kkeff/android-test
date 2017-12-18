@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">IMDB 2.0</string>
     <string name="edit_message">Enter a message!!</string>
     <string name="button_send">Send</string>
+    <string name="title_activity_detail">Details</string>
+    <string name="about_text">About...</string>
 </resources>

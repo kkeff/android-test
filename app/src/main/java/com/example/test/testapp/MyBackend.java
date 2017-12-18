@@ -12,9 +12,8 @@ import java.util.Map;
  */
 
 public class MyBackend {
-    private List<Actor> actors = createAllActors();
-    private Map<String, Actor> actorMap = new HashMap<>();
-
+    public static List<Actor> actors = createAllActors();
+    public static Map<String, Actor> actorMap = createActorMap(actors);
 
     public List<Actor> getActors() {
 
@@ -29,17 +28,25 @@ public class MyBackend {
         return actors;
     }
 
-    private List<Actor> createAllActors () {
-        Actor brad = new Actor("1",
+    private static List<Actor> createAllActors () {
+        Actor brad = new Actor("brad_pitt",
                 "Brad Pitt",
                 "An actor and producer known as much for his versatility as he is for his handsome face, Golden Globe-winner Brad Pitt's most widely recognized role may be Tyler Durden in Fight Club (1999).",
                 Arrays.asList("Fight Club", "Snatch"));
-        Actor alicia = new Actor("2",
+        Actor alicia = new Actor("alicia_vikander",
                 "Alicia Vikander",
                 "Alicia Vikander is a Swedish actress, dancer and producer. She was born and raised in Gothenburg, Västra Götalands län, Sweden, to Maria Fahl-Vikander, an actress of stage and screen, and Svante Vikander, a psychiatrist. She is of Swedish and one quarter Finnish descent.",
                 Arrays.asList("Ex Machina", "The Danish Girl"));
 
         return Arrays.asList(brad, alicia);
+    }
+
+    private static Map<String, Actor> createActorMap (List<Actor> actors) {
+        Map<String, Actor> actorMap = new HashMap<String, Actor>();
+        for(Actor actor : actors) {
+            actorMap.put(actor.getId(), actor);
+        }
+        return actorMap;
     }
 
 }
